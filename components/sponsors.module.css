@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+
+.sponsorsSection {
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    padding: 14vh 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+    font-family: 'Kanit', sans-serif;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    font-family: 'Kanit', sans-serif;
+}
+
+.line {
+    width: 80vw;
+    height: 1px;
+    background-color: white;
+    margin: 12px auto 4rem auto;
+}
+
+.academicSection {
+    margin-bottom: 4rem;
+}
+
+.academicGrid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.academicCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    width: 450px;
+    height: 300px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.academicCard:hover {
+    transform: translateY(-5px);
+}
+
+.commercialSection {
+    margin-bottom: 2rem;
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 2rem;
+    font-family: 'Kanit', sans-serif;
+}
+
+.carouselWrapper {
+    margin: 4rem 0;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.carouselContainer {
+    overflow: hidden;
+    padding: 2rem 0;
+    position: relative;
+    width: 100%;
+    mask: linear-gradient(90deg,
+            transparent 0%,
+            black 5%,
+            black 95%,
+            transparent 100%);
+    -webkit-mask: linear-gradient(90deg,
+            transparent 0%,
+            black 5%,
+            black 95%,
+            transparent 100%);
+}
+
+.carousel {
+    display: flex;
+    animation: scrollLeft 30s linear infinite;
+    width: max-content;
+    gap: 2rem;
+}
+
+.sponsorCard {
+    flex: 0 0 450px;
+    height: 300px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 2rem;
+    border: none;
+    box-shadow: none;
+}
+
+.sponsorCard:hover {
+    transform: translateY(-5px);
+}
+
+.imageWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.sponsorLogo {
+    max-width: 350px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(1);
+    transition: all 0.3s ease;
+}
+
+.sponsorCard:hover .sponsorLogo {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+.sponsorInfo {
+    text-align: center;
+    width: 100%;
+}
+
+.sponsorName {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 0.5rem 0;
+    font-family: 'Kanit', sans-serif;
+}
+
+.sponsorCategory {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Kanit', sans-serif;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-450px * 6 - 12rem));
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .sponsorCard {
+        flex: 0 0 380px;
+        height: 260px;
+    }
+
+    .academicCard {
+        width: 380px;
+        height: 260px;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    @keyframes scrollLeft {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-380px * 6 - 12rem));
+        }
+    }
+    
+    .sponsorLogo {
+        max-width: 300px;
+        max-height: 170px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .sponsorCard {
+        flex: 0 0 320px;
+        height: 220px;
+        padding: 1rem;
+    }
+
+    .academicCard {
+        width: 320px;
+        height: 220px;
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
+
+    .academicGrid {
+        gap: 2rem;
+    }
+
+    @keyframes scrollLeft {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-320px * 6 - 12rem));
+        }
+    }
+    
+    .sponsorLogo {
+        max-width: 250px;
+        max-height: 140px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .container {
+        padding: 10vh 1rem;
+    }
+
+    .sponsorCard {
+        flex: 0 0 280px;
+        height: 200px;
+        padding: 0.8rem;
+    }
+
+    .academicCard {
+        width: 280px;
+        height: 200px;
+        padding: 0.8rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .sponsorName {
+        font-size: 1rem;
+    }
+
+    .sponsorCategory {
+        font-size: 0.8rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.3rem;
+    }
+
+    .academicGrid {
+        gap: 1.5rem;
+        flex-direction: column;
+    }
+
+    @keyframes scrollLeft {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-280px * 6 - 12rem));
+        }
+    }
+    
+    .sponsorLogo {
+        max-width: 200px;
+        max-height: 120px;
+    }
+}
+
+/* Pause animation on hover */
+.carouselContainer:hover .carousel {
+    animation-play-state: paused;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .carousel {
+        animation: none;
+    }
+
+    .sponsorCard {
+        transition: none;
+    }
+
+    .sponsorLogo {
+        transition: none;
+    }
+}

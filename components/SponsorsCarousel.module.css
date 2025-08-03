@@ -1,0 +1,197 @@
+.sponsorsSection {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
+  color: white;
+  font-family: 'Kanit', sans-serif;
+}
+
+.container {
+  padding-top: 14vh;
+  padding-bottom: 14vh;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin: auto;
+  margin-top: 12px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.line {
+  width: 80vw;
+  margin: auto;
+  margin-top: 12px;
+  height: 1px;
+  background-color: white;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.carouselContainer {
+  overflow: hidden;
+  padding: 20px 0;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  width: calc(240px * 10); /* Width for 10 items (5 original + 5 duplicates) */
+}
+
+.carouselReverse {
+  display: flex;
+  animation: scrollReverse 25s linear infinite;
+  width: calc(240px * 10); /* Width for 10 items (5 original + 5 duplicates) */
+}
+
+.sponsorCard {
+  flex: 0 0 240px;
+  height: 160px;
+  margin: 0 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsorCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(74, 147, 224, 0.3);
+}
+
+.sponsorLogo {
+  max-width: 180px;
+  max-height: 120px;
+  object-fit: contain;
+  filter: brightness(1.1);
+  transition: filter 0.3s ease;
+}
+
+.sponsorCard:hover .sponsorLogo {
+  filter: brightness(1.3);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move by half the width to create seamless loop */
+  }
+}
+
+@keyframes scrollReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .sponsorCard {
+    flex: 0 0 200px;
+    height: 140px;
+    margin: 0 15px;
+  }
+  
+  .sponsorLogo {
+    max-width: 150px;
+    max-height: 100px;
+  }
+  
+  .carousel,
+  .carouselReverse {
+    width: calc(200px * 10);
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .sponsorCard {
+    flex: 0 0 180px;
+    height: 120px;
+    margin: 0 10px;
+  }
+  
+  .sponsorLogo {
+    max-width: 130px;
+    max-height: 80px;
+  }
+  
+  .carousel,
+  .carouselReverse {
+    width: calc(180px * 10);
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .container {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+  }
+  
+  .sponsorCard {
+    flex: 0 0 150px;
+    height: 100px;
+    margin: 0 8px;
+  }
+  
+  .sponsorLogo {
+    max-width: 110px;
+    max-height: 70px;
+  }
+  
+  .carousel,
+  .carouselReverse {
+    width: calc(150px * 10);
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+  
+  .line {
+    width: 90vw;
+  }
+}
+
+/* Pause animation on hover */
+.carouselContainer:hover .carousel,
+.carouselContainer:hover .carouselReverse {
+  animation-play-state: paused;
+}

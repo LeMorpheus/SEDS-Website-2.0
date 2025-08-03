@@ -69,7 +69,7 @@ function NavBarNew() {
           <a className="nav-project" href="../archangel/">R&D</a>
         </div>
         <Link href="/posts/"><a className="nav-ele">Blog</a></Link>
-        <a className="nav-ele" href="/sponsors/">Sponsors</a>
+        <Link href="/sponsors"><a className="nav-ele">Sponsors</a></Link>
         <a className="nav-ele" href="../contact/">Contact</a>
         {user && <SignOutButton />}
       </div>
