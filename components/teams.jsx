@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 // Team data (moved from lib/team_data.js for self-contained component)
 const data25 = [
@@ -208,8 +209,25 @@ const styles = {
   teamPageContainer: {
     paddingTop: '12.5vh',
     backgroundColor: 'black',
+    backgroundImage: 'url("/images/space.jpg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
     minHeight: '100vh',
-    color: 'white'
+    color: 'white',
+    position: 'relative',
+    zIndex: 0,
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      zIndex: -1
+    }
   },
   open: {
     background: 'white',
@@ -247,19 +265,10 @@ const styles = {
     marginTop: '5vh'
   },
   times: {
-    position: 'fixed',
-    left: '15vh',
-    top: '25vh',
-    zIndex: 10
+    display: 'none' // Hidden since we're using the new icon-based selector
   },
   line: {
-    width: '0.5px',
-    height: '45vh',
-    background: '#fff',
-    position: 'fixed',
-    left: '16vh',
-    top: '25vh',
-    zIndex: 9
+    display: 'none' // Hidden since we're using the new icon-based selector
   },
   right: {
     marginLeft: '45vh',
@@ -314,12 +323,16 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    border: '1px solid #333',
-    background: '#000',
+    border: '1px solid rgba(255, 255, 255, 0.18)',
+    background: 'rgba(0, 0, 0, 0.4)',
+    backdropFilter: 'blur(16px) saturate(180%)',
+    WebkitBackdropFilter: 'blur(16px) saturate(180%)',
     color: 'white',
-    borderRadius: '10px',
+    borderRadius: '15px',
     overflow: 'hidden',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+    cursor: 'pointer',
+    boxShadow: '0 8px 32px 0 rgba(218, 165, 32, 0.15)'
   },
   images: {
     width: '100%',
@@ -489,8 +502,25 @@ export function TeamCards({ datas = [] }) {
   return (
     <>
       {datas.map((data, i) => {
+        const combinedStyles = {
+          ...styles.container,
+          willChange: 'transform',
+          perspective: '1000px'
+        };
         return (
-          <div key={i} style={styles.container} className="team-card">
+          <div 
+            key={i} 
+            style={combinedStyles} 
+            className="team-card"
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-20px) scale(1.05)';
+              e.currentTarget.style.boxShadow = '0 20px 50px rgba(218, 165, 32, 0.4), 0 0 30px rgba(255, 215, 0, 0.3)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0) scale(1)';
+              e.currentTarget.style.boxShadow = '0 8px 32px 0 rgba(218, 165, 32, 0.15)';
+            }}
+          >
             <div style={styles.images}>
               <div style={styles.img}>
                 <Image
@@ -539,46 +569,116 @@ export function YearSelector({
   onDropdownToggle 
 }) {
   return (
-    <>
-      {/* Desktop Timeline */}
-      <div style={styles.times} className="desktop-timeline">
-        {Object.entries(yearData).map(([key, { label }]) => (
-          <div key={key} style={styles.time}>
-            <div style={number == key ? styles.open : styles.closed}></div>
+    <div className="year-selector">
+      <div className="timeline-icon" onClick={() => onDropdownToggle(!drop)}>
+        <FontAwesomeIcon icon={faClock} />
+        <span className="current-year">{year}</span>
+      </div>
+      
+      {drop && (
+        <div className="year-dropdown">
+          {Object.entries(yearData).map(([key, { label }]) => (
             <div
-              style={number == key ? styles.yearB : styles.year}
+              key={key}
+              className={`year-option ${number == key ? 'active' : ''}`}
               onClick={() => onYearChange(parseInt(key), label)}
             >
               {label}
             </div>
-          </div>
-        ))}
-      </div>
-      
-      {/* Mobile Dropdown */}
-      <div style={styles.dropDownTime} className="mobile-dropdown">
-        <div style={styles.years}>YEAR:</div>
-        <div className="droppp">
-          <div
-            style={drop == false ? styles.Drops : styles.none}
-            onClick={() => onDropdownToggle(true)}
-          >
-            {year}
-          </div>
-          <div style={drop == true ? styles.Drops : styles.none}>
-            {Object.entries(yearData).map(([key, { label }]) => (
-              <div
-                key={key}
-                style={number == key ? styles.dropYearBold : styles.dropYear}
-                onClick={() => onYearChange(parseInt(key), label)}
-              >
-                {label}
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
-      </div>
-    </>
+      )}
+      <style jsx>{`
+        .year-selector {
+          position: fixed;
+          top: 15vh;
+          left: 5vh;
+          z-index: 100;
+        }
+        
+        .timeline-icon {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          padding: 1rem 1.5rem;
+          border-radius: 50px;
+          cursor: pointer;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: all 0.3s ease;
+        }
+        
+        .timeline-icon:hover {
+          background: rgba(255, 255, 255, 0.2);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 32px rgba(218, 165, 32, 0.2);
+        }
+        
+        .timeline-icon svg {
+          width: 1.5rem;
+          height: 1.5rem;
+          color: #FFD700;
+        }
+        
+        .current-year {
+          color: white;
+          font-size: 1.1rem;
+          font-weight: 500;
+        }
+        
+        .year-dropdown {
+          position: absolute;
+          top: 120%;
+          left: 0;
+          background: rgba(0, 0, 0, 0.9);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 12px;
+          padding: 0.5rem;
+          min-width: 200px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+          animation: fadeIn 0.2s ease;
+        }
+        
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .year-option {
+          padding: 0.8rem 1.2rem;
+          color: #ccc;
+          cursor: pointer;
+          border-radius: 8px;
+          transition: all 0.2s ease;
+        }
+        
+        .year-option:hover {
+          background: rgba(255, 255, 255, 0.1);
+          color: white;
+        }
+        
+        .year-option.active {
+          background: rgba(218, 165, 32, 0.2);
+          color: #FFD700;
+        }
+        
+        @media screen and (max-width: 768px) {
+          .year-selector {
+            left: 50%;
+            transform: translateX(-50%);
+            top: 12vh;
+          }
+        }
+      `}</style>
+    </div>
   );
 }
 
@@ -624,10 +724,51 @@ export function TeamPage() {
         
         <TeamDisplay number={number} yearData={yearData} />
       </main>
-      <style jsx>{`
+      <style jsx global>{`
+        .team-card {
+          transform: translateZ(0);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+          backface-visibility: hidden;
+          position: relative;
+          background: rgba(255, 255, 255, 0.03) !important;
+          backdrop-filter: blur(16px) saturate(180%) !important;
+          -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+        }
+        .team-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 15px;
+          padding: 2px;
+          background: linear-gradient(
+            315deg,
+            rgba(255, 215, 0, 0.5),
+            rgba(255, 255, 255, 0.1)
+          );
+          -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                        linear-gradient(#fff 0 0);
+          mask: linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          pointer-events: none;
+        }
         .team-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+          transform: translateY(-20px) scale(1.05) !important;
+          box-shadow: 0 20px 50px rgba(218, 165, 32, 0.4),
+                      0 0 30px rgba(255, 215, 0, 0.3) !important;
+          border-color: rgba(255, 215, 0, 0.5) !important;
+          z-index: 1;
+        }
+        .team-card:hover::before {
+          background: linear-gradient(
+            315deg,
+            rgba(255, 215, 0, 0.8),
+            rgba(255, 255, 255, 0.2)
+          );
         }
         
         .linkedin-link:hover {
