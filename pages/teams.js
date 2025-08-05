@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Cards from '../components/TeamCards/cards';
 import styles from '../styles/teams/teams.module.css'
-import { data22, data21, data20 } from "../lib/team_data";
+import { data25, data22, data21, data20 } from "../lib/team_data";
 
 function getLabel(year) {
   return `20${year}-20${year + 1}`;
@@ -69,11 +69,11 @@ function Teams() {
     hrefF: "hub.com"
   }]
 
-  const [year, setyear] = useState('2022-2023');
+  const [year, setyear] = useState('2025-2026');
   const [drop, setDrop] = useState(false);
 
   return (
-    <main style={{ paddingTop: "12.5vh" }}>
+    <main style={{ paddingTop: "12.5vh", backgroundColor: "black", minHeight: "100vh", color: "white" }}>
       <div className={styles.left}>
         <div className={styles.line}></div>
         <div className={styles.times}>
@@ -85,7 +85,7 @@ function Teams() {
                 setNumber(0);
               }}
             >
-              2022-2023
+              2025-2026
             </div>
           </div>
           <div className={styles.time}>
@@ -96,7 +96,7 @@ function Teams() {
                 setNumber(1);
               }}
             >
-              2021-2022
+              2022-2023
             </div>
           </div>
           <div className={styles.time}>
@@ -105,6 +105,17 @@ function Teams() {
               className={number == 2 ? styles.yearB : styles.year}
               onClick={() => {
                 setNumber(2);
+              }}
+            >
+              2021-2022
+            </div>
+          </div>
+          <div className={styles.time}>
+            <div className={number == 3 ? styles.open : styles.closed}></div>
+            <div
+              className={number == 3 ? styles.yearB : styles.year}
+              onClick={() => {
+                setNumber(3);
               }}
             >
               2020-2021
@@ -126,32 +137,42 @@ function Teams() {
               <div
                 className={number == 0 ? styles.dropYearBold : styles.dropYear}
                 onClick={() => {
-                  setyear("2021-2022");
+                  setyear("2025-2026");
                   setNumber(0);
+                  setDrop(false);
+                }}
+              >
+                2025-2026
+              </div>
+              <div
+                className={number == 1 ? styles.dropYearBold : styles.dropYear}
+                onClick={() => {
+                  setyear("2022-2023");
+                  setNumber(1);
+                  setDrop(false);
+                }}
+              >
+                2022-2023
+              </div>
+              <div
+                className={number == 2 ? styles.dropYearBold : styles.dropYear}
+                onClick={() => {
+                  setyear("2021-2022");
+                  setNumber(2);
                   setDrop(false);
                 }}
               >
                 2021-2022
               </div>
               <div
-                className={number == 1 ? styles.dropYearBold : styles.dropYear}
+                className={number == 3 ? styles.dropYearBold : styles.dropYear}
                 onClick={() => {
                   setyear("2020-2021");
-                  setNumber(1);
+                  setNumber(3);
                   setDrop(false);
                 }}
               >
                 2020-2021
-              </div>
-              <div
-                className={number == 2 ? styles.dropYearBold : styles.dropYear}
-                onClick={() => {
-                  setyear("2019-2020");
-                  setNumber(2);
-                  setDrop(false);
-                }}
-              >
-                2019-2020
               </div>
             </div>
           </div>
@@ -159,12 +180,15 @@ function Teams() {
       </div>
       <div className={styles.right}>
         <div className={number == 0 ? styles.show : styles.hide}>
-          <Cards datas={data22} />
+          <Cards datas={data25} />
         </div>
         <div className={number == 1 ? styles.show : styles.hide}>
-          <Cards datas={data21} />
+          <Cards datas={data22} />
         </div>
         <div className={number == 2 ? styles.show : styles.hide}>
+          <Cards datas={data21} />
+        </div>
+        <div className={number == 3 ? styles.show : styles.hide}>
           <Cards datas={data20} />
         </div>
       </div>

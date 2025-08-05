@@ -1,36 +1,134 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+
 .container {
-  height: 50vh;
+  height: 55vh;
   width: 40vh;
   max-width: 290px;
   margin: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid #333;
   background: #000;
   color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
 .images {
   width: 100%;
-  /* background: white; */
+  height: 60%;
   background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
+
+.img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.memberInfo {
+  padding: 1.5vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vh;
+  flex: 1;
+  justify-content: center;
+}
+
 .name {
   font-family: "Kanit", sans-serif;
-  margin: 1vh;
-  margin-top: 3vh;
-  font-size: 2.8vh;
+  font-size: 2.5vh;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
 }
+
+.por {
+  font-size: 2vh;
+  color: #ccc;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+}
+
+.socialLinks {
+  margin-top: 1vh;
+}
+
+.linkedinLink {
+  color: #0077b5;
+  font-size: 3vh;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.linkedinLink:hover {
+  color: #005582;
+  transform: scale(1.2);
+}
+
+.linkedinIcon {
+  width: 3vh;
+  height: 3vh;
+}
+
 .links {
   display: flex;
   flex-direction: row;
   margin-top: 2vh;
 }
+
 .link {
   margin: 1vh;
   margin-top: 0;
 }
-/* 
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 35vh;
+    height: 50vh;
+    margin: 3vh;
+  }
+
+  .name {
+    font-size: 2.2vh;
+  }
+
+  .por {
+    font-size: 1.8vh;
+  }
+
+  .linkedinIcon {
+    width: 2.5vh;
+    height: 2.5vh;
+  }
+}
+
 @media screen and (max-width: 512px) {
-} */
+  .container {
+    width: 30vh;
+    height: 45vh;
+    margin: 2vh;
+  }
+
+  .name {
+    font-size: 2vh;
+  }
+
+  .por {
+    font-size: 1.6vh;
+  }
+}
