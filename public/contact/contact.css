@@ -33,11 +33,13 @@ hr {
   margin-right: auto;
   background-color: #fff;
 }
+
 .user__form {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .user__info {
   display: flex;
   flex-direction: column;
@@ -155,6 +157,7 @@ button:hover {
     flex-direction: column;
   }
 }
+
 @media (max-width: 576px) {
   ::placeholder {
     font-size: 0.9rem;

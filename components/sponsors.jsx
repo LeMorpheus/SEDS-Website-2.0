@@ -7,14 +7,14 @@ const Sponsors = () => {
 
     // All sponsor logos for the infinite carousel
     const academicPartners = [
-        { name: 'BITS Pilani', logo: '/sponsors/images/BITS.png', category: 'Academic Partner' },
-        { name: 'I-Cell', logo: '/sponsors/images/icell.png', category: 'Academic Partner' },
+        { name: 'BITS Pilani', logo: '/sponsors/images/BITS.svg', category: 'Academic Partner' },
+        { name: 'I-Cell', logo: '/sponsors/images/icell.svg', category: 'Academic Partner' },
     ];
 
     const commercialPartners = [
-        { name: 'PCBWay', logo: '/sponsors/images/pcbway.png', category: 'Commercial Partner' },
-        { name: 'Kusumgar', logo: '/sponsors/images/kusumgar.png', category: 'Commercial Partner' },
-        { name: 'DS Works', logo: '/sponsors/images/dsworks.png', category: 'Commercial Partner' },
+        { name: 'PCBWay', logo: '/sponsors/images/pcbway.svg', category: 'Commercial Partner' },
+        { name: 'Kusumgar', logo: '/sponsors/images/kusumgar.svg', category: 'Commercial Partner' },
+        { name: 'DS Works', logo: '/sponsors/images/dsworks.svg', category: 'Commercial Partner' },
     ];
 
     useEffect(() => {
@@ -91,6 +91,33 @@ const Sponsors = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Additional Sponsors Cards Grid */}
+                <section className={styles.cardsSection}>
+
+                    <div className={styles.cardsGrid}>
+                        {[1, 2, 3, 4].map((index) => (
+                            <div key={`card-${index}`} className={styles.sponsorCardStatic}>
+                                <div className={styles.cardImageWrapper}>
+                                    <Image
+                                        src="/sponsors/images/Google_Favicon_2025.svg.svg"
+                                        alt={`Sponsor ${index}`}
+                                        width={300}
+                                        height={200}
+                                        className={styles.cardImage}
+                                    />
+                                </div>
+                                <div className={styles.cardContent}>
+                                    <h3 className={styles.cardTitle}>Sponsor Company {index}</h3>
+                                    <p className={styles.cardDescription}>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                                    </p>
+                                    <span className={styles.cardCategory}>Technology Partner</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
             </div>
         </div>
     );

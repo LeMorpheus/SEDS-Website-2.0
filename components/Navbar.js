@@ -40,16 +40,16 @@ export default function Navbar() {
                 </a>
                 <div className={`mobile-dropdown ${dropdownOpen ? 'active' : ''}`} id="mobile-dropdown">
                     <Link href="/sacup">
-                        <a className="nav-project">Rocket</a>
+                        <a className="nav-project">Artemis</a>
                     </Link>
                     <Link href="/cansat">
-                        <a className="nav-project">CanSat</a>
+                        <a className="nav-project">Janus</a>
                     </Link>
                     <Link href="/cubesat">
-                        <a className="nav-project">CubeSat</a>
+                        <a className="nav-project">Hyperion</a>
                     </Link>
                     <Link href="/archangel">
-                        <a className="nav-project">R&D</a>
+                        <a className="nav-project">Archangel</a>
                     </Link>
                 </div>
                 <Link href="/sponsors">
@@ -71,10 +71,10 @@ export default function Navbar() {
                     className="nav-ele fa-solid fa-bars"
                 ></i>
                 <Link href="/sacup">
-                    <a className="nav-ele">Rocket</a>
+                    <a className="nav-ele">Artemis</a>
                 </Link>
                 <Link href="/cansat">
-                    <a className="nav-ele">CanSat</a>
+                    <a className="nav-ele">Janus</a>
                 </Link>
                 <Link href="/">
                     <a>
@@ -82,10 +82,10 @@ export default function Navbar() {
                     </a>
                 </Link>
                 <Link href="/cubesat">
-                    <a className="nav-ele">CubeSat</a>
+                    <a className="nav-ele">Hyperion</a>
                 </Link>
                 <Link href="/archangel">
-                    <a className="nav-ele">R&D</a>
+                    <a className="nav-ele">Archangel</a>
                 </Link>
                 <i className="nav-ele fa fa-search" aria-hidden="true"></i>
             </nav>

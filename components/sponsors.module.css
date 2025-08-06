@@ -19,7 +19,7 @@
 
 .title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 600;
     color: white;
     margin-bottom: 1rem;
@@ -28,7 +28,7 @@
 
 .subtitle {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 2rem;
@@ -79,7 +79,7 @@
 
 .sectionTitle {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
     color: white;
     margin-bottom: 2rem;
@@ -206,7 +206,15 @@
     }
 
     .title {
-        font-size: 3rem;
+        font-size: 3.2rem;
+    }
+
+    .subtitle {
+        font-size: 1.4rem;
+    }
+
+    .sectionTitle {
+        font-size: 2.3rem;
     }
 
     @keyframes scrollLeft {
@@ -218,7 +226,7 @@
             transform: translateX(calc(-380px * 6 - 12rem));
         }
     }
-    
+
     .sponsorLogo {
         max-width: 300px;
         max-height: 170px;
@@ -239,15 +247,15 @@
     }
 
     .title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .subtitle {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .sectionTitle {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .academicGrid {
@@ -263,7 +271,7 @@
             transform: translateX(calc(-320px * 6 - 12rem));
         }
     }
-    
+
     .sponsorLogo {
         max-width: 250px;
         max-height: 140px;
@@ -288,11 +296,11 @@
     }
 
     .title {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
     }
 
     .subtitle {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
 
     .sponsorName {
@@ -304,7 +312,7 @@
     }
 
     .sectionTitle {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
     }
 
     .academicGrid {
@@ -321,7 +329,7 @@
             transform: translateX(calc(-280px * 6 - 12rem));
         }
     }
-    
+
     .sponsorLogo {
         max-width: 200px;
         max-height: 120px;
@@ -331,6 +339,167 @@
 /* Pause animation on hover */
 .carouselContainer:hover .carousel {
     animation-play-state: paused;
+}
+
+/* Cards Grid Section */
+.cardsSection {
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+    padding: 0 1rem;
+}
+
+.sponsorCardStatic {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sponsorCardStatic:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cardImageWrapper {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    padding: 1rem;
+}
+
+.sponsorCardStatic:hover .cardImage {
+    transform: scale(1.05);
+}
+
+.cardContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 1rem 0;
+    font-family: 'Kanit', sans-serif;
+}
+
+.cardDescription {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+    flex: 1;
+    font-family: 'Kanit', sans-serif;
+}
+
+.cardCategory {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #4CAF50;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+    font-family: 'Kanit', sans-serif;
+}
+
+/* Responsive adjustments for cards grid */
+@media screen and (max-width: 1200px) {
+    .cardsGrid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+
+    .cardTitle {
+        font-size: 1.6rem;
+    }
+
+    .cardDescription {
+        font-size: 1.2rem;
+    }
+
+    .cardCategory {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .cardsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .cardImageWrapper {
+        height: 180px;
+    }
+
+    .cardTitle {
+        font-size: 1.5rem;
+    }
+
+    .cardDescription {
+        font-size: 1.1rem;
+    }
+
+    .cardCategory {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .cardsGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .sponsorCardStatic {
+        padding: 1rem;
+    }
+
+    .cardImageWrapper {
+        height: 160px;
+    }
+
+    .cardTitle {
+        font-size: 1.4rem;
+    }
+
+    .cardDescription {
+        font-size: 1rem;
+    }
+
+    .cardCategory {
+        font-size: 0.9rem;
+    }
 }
 
 /* Accessibility */
@@ -344,6 +513,14 @@
     }
 
     .sponsorLogo {
+        transition: none;
+    }
+
+    .sponsorCardStatic {
+        transition: none;
+    }
+
+    .cardImage {
         transition: none;
     }
 }
