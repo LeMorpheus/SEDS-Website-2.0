@@ -1,10 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SEDS - Home</title>
+    <style>
+      body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(ellipse at bottom, #0d0d1a 0%, #000000 100%);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      margin-left: 75em;
+      margin-top: 16em;
+       max-width: 100%; 
+    }
+
+    .title {
+      font-size: 7rem;
+      font-weight: 700;
+      color: #00bfff;
+      white-space: nowrap;
+    }
+
+    .subtitle {
+      font-size: 3.3rem;
+      font-weight: 600;
+      color: #00bfff;
+      white-space: nowrap;
+    }
+
+    .quote {
+      font-size: 2.4rem;
+      color: #cccccc;
+      font-weight: 500;
+      white-space: nowrap;
+      margin-top: 1.5em;
+    }
+
+    /* galaxy pixel font */
+    
+    .pixel-text {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 800; 
+  font-style: normal;
+  font-size: 100px;
+  white-space: nowrap;       
+         
+  text-overflow: ellipsis;
+  color: #358F8A;
+  -webkit-text-stroke: 2px white;
+}
+.pixel-text-subtitle {
+ font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 800; 
+  font-style: normal;
+  font-size: 50px;
+  white-space: nowrap;       
+         
+  text-overflow: ellipsis;
+  color: #358F8A; 
+}
+.pixel-text-moto {
+ font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 100; 
+  font-style: normal;
+  font-size: 40px;
+  white-space: nowrap;       
+         
+  text-overflow: ellipsis;
+ 
+
+  background: linear-gradient(90deg, #FFDE47, #FF856B); /* customize colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-top: 15px;
+}
+   
+    /* CSS for the star background on hommepage */
+    /*.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/*.stars::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    /* Randomizing positions across full screen */
+
+    /*-90vw -90vh white, -70vw -30vh white, -50vw -60vh white, -30vw -20vh white, -10vw -10vh white,
+  0vw 0vh white,
+  10vw 10vh white, 30vw 20vh white, 50vw 60vh white, 70vw 30vh white, 90vw 90vh white,
+  -80vw 60vh white, -60vw 40vh white, -40vw 10vh white, -20vw 50vh white,
+  20vw -50vh white, 40vw -20vh white, 60vw -40vh white, 80vw -60vh white, 100vw -80vh white,
+    10vw 10vh white, 20vw 40vh white, 30vw 60vh white, 40vw 20vh white, 50vw 80vh white,
+    60vw 50vh white, 70vw 90vh white, 80vw 30vh white, 90vw 70vh white, 25vw 15vh white,
+    75vw 10vh white, 95vw 85vh white, 15vw 95vh white, 5vw 45vh white, 35vw 35vh white,
+    21vw 86vh white, 14vw 81vh white, 76vw 64vh white, 24vw 45vh white, 51vw 36vh white,
+    42vw 7vh white, 46vw 20vh white, 67vw 50vh white, 45vw 48vh white, 1vw 77vh white,
+    90vw 32vh white, 71vw 73vh white, 90vw 57vh white, 26vw 41vh white, 93vw 35vh white,
+    47vw 66vh white, 29vw 11vh white, 70vw 78vh white, 2vw 51vh white, 41vw 94vh white,
+    57vw 74vh white, 32vw 58vh white, 85vw 43vh white, 11vw 53vh white, 84vw 5vh white,
+    88vw 88vh white, 3vw 17vh white, 79vw 92vh white, 5vw 10vh white, 97vw 27vh white,
+    53vw 8vh white, 99vw 38vh white, 37vw 25vh white, 13vw 31vh white, 33vw 79vh white,
+    10vw 83vh white, 16vw 28vh white, 6vw 69vh white, 17vw 39vh white, 96vw 21vh white,
+    64vw 67vh white, 61vw 90vh white, 58vw 76vh white, 31vw 12vh white, 86vw 19vh white,
+    12vw 59vh white, 83vw 42vh white, 40vw 23vh white, 35vw 49vh white, 19vw 3vh white,
+    87vw 18vh white, 62vw 22vh white, 9vw 47vh white, 59vw 2vh white, 65vw 29vh white,
+    77vw 84vh white, 48vw 34vh white, 30vw 91vh white, 69vw 75vh white, 68vw 72vh white,
+    22vw 6vh white, 43vw 68vh white, 55vw 54vh white, 27vw 63vh white, 18vw 80vh white,
+    66vw 46vh white, 38vw 40vh white, 72vw 16vh white, 56vw 1vh white, 63vw 26vh white,
+    73vw 96vh white, 50vw 30vh white, 20vw 13vh white, 74vw 4vh white, 7vw 61vh white,
+    36vw 93vh white, 23vw 87vh white, 94vw 24vh white, 28vw 33vh white, 98vw 37vh white,
+    60vw 14vh white, 78vw 56vh white, 34vw 44vh white, 8vw 9vh white, 54vw 17vh white,
+    91vw 70vh white, 82vw 60vh white, 89vw 98vh white, 39vw 55vh white, 92vw 52vh white,
+    44vw 89vh white, 80vw 62vh white, 52vw 99vh white, 95vw 97vh white, 0vw 0vh white,
+    81vw 95vh white, 75vw 65vh white, 25vw 98vh white, 85vw 91vh white, 72vw 12vh white,
+    -95vw -75vh white, -88vw -60vh white, -83vw -45vh white, -79vw -30vh white, -74vw -15vh white,
+-68vw -5vh white,  -62vw -20vh white, -56vw -40vh white, -50vw -60vh white, -44vw -80vh white,
+-38vw -95vh white, -32vw -70vh white, -26vw -50vh white, -20vw -30vh white, -14vw -10vh white,
+-8vw -90vh white,  -2vw -70vh white,   4vw -50vh white,  10vw -30vh white,  16vw -10vh white,
+
+22vw -80vh white, 28vw -60vh white, 34vw -40vh white, 40vw -20vh white, 46vw -5vh white,
+52vw -25vh white, 58vw -45vh white, 64vw -65vh white, 70vw -85vh white, 76vw -95vh white,
+82vw -70vh white, 88vw -50vh white, 94vw -30vh white, 100vw -10vh white, -100vw 0vh white,
+
+-95vw 5vh white,  -90vw 20vh white, -85vw 35vh white, -80vw 50vh white, -75vw 65vh white,
+-70vw 80vh white, -65vw 95vh white, -60vw 70vh white, -55vw 45vh white, -50vw 25vh white,
+-45vw 5vh white,  -40vw 15vh white, -35vw 35vh white, -30vw 55vh white, -25vw 75vh white,
+
+-20vw 95vh white, -15vw 60vh white, -10vw 30vh white, -5vw 10vh white, 5vw 25vh white,
+10vw 45vh white, 15vw 65vh white, 20vw 85vh white, 25vw 95vh white, 30vw 70vh white,
+35vw 50vh white, 40vw 30vh white, 45vw 10vh white, 50vw 5vh white, 55vw 25vh white,
+
+60vw 45vh white, 65vw 65vh white, 70vw 85vh white, 75vw 95vh white, 80vw 70vh white,
+85vw 50vh white, 90vw 30vh white, 95vw 10vh white, 100vw 25vh white, -90vw -10vh white;
+
+
+    
+  animation : twinkle 3s infinite ease-in-out;
+}
+
+/*@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.05; }
+}*/
+
+/* Aviral star bg */
+.starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  width: 2.2px;
+  height: 2.2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: moveStar linear infinite;
+  box-shadow: 0 0 6px 2px white;
+}
+
+/* Random motion animation */
+@keyframes moveStar {
+  from {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh) translateX(50vw);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+    </style>
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
@@ -155,6 +368,7 @@
   </head>
   <body>
     <canvas id="intro-video"></canvas>
+    <div class="stars"></div>
     <div class="mouse-scroll">
       <div class="mouse"></div>
     </div>
@@ -200,18 +414,20 @@
           <a class="nav-ele" href="../archangel/">R&D</a>
         </div>
         <!-- Carousel -->
-        <div class="splide" id="image-slider">
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">
-                <img src="assets/home-1.png" alt="" />
-              </li>
-              <li class="splide__slide">
-                <img src="assets/home-2.png" alt="" />
-              </li>
-            </ul>
+        <script src="./Galaxy.js">
+            <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+            
+            </div>
+        </script>
+          
+          <div class="container">
+            <p class="pixel-text">WELCOME TO SEDS BPHC</p>
+            <p class="pixel-text-subtitle">Students for the Exploration and Development of Space</p>
+            <p class="pixel-text-moto">"Space or Nothing"</p>
           </div>
-        </div>
+          <div class="starfield"></div>
+        
+        
       </section>
       <div id="end"></div>
     </main>
@@ -236,5 +452,28 @@
         }
       });
     </script>
+    <script>
+  const starfield = document.querySelector('.starfield');
+
+  const colors = ['white',  '#3D3DFF', '#CC9EFF'];
+
+  for (let i = 0; i < 500; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    
+    star.style.top = Math.random() * 100 + 'vh';
+    star.style.left = Math.random() * 100 + 'vw';
+    star.style.animationDuration = (5 + Math.random() * 4) + 's';
+    star.style.animationDelay = Math.random() * 5 + 's';
+    star.style.background = color;
+    star.style.boxShadow = `0 0 6px 2px ${color}`;
+    
+    starfield.appendChild(star);
+  } 
+</script>
+
+
   </body>
 </html>
