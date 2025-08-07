@@ -7,10 +7,30 @@
   min-height: 100vh;
 }
 
+.postContent h1,
+.postContent h2,
+.postContent h3 {
+  font-weight: bold;
+}
+
+.postContent p {
+  margin-bottom: 1.5rem;
+}
+
+.postContent h2,
+.postContent h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+
 .header {
   text-align: center;
   margin-bottom: 3rem;
   padding: 0 1rem;
+}
+.postContent h1 {
+  margin-top: 4rem; /* increase or decrease as needed */
 }
 
 .header h1 {
@@ -96,6 +116,7 @@
   
   .header h1 {
     font-size: 2.4rem;
+
   }
   
   .post {
@@ -132,7 +153,7 @@
   padding: 2rem 3rem;
   max-width: 1000px;
   margin: 0 auto;
-  color: black; /* assuming dark background */
+  color: black; 
   line-height: 1.7;
   font-size: 2rem;
 }
@@ -142,7 +163,7 @@
   max-width: 600px;
   height: auto;
   display: block;
-  margin: 5rem auto 2rem auto;
+  margin: 2rem auto 2rem auto;
   border-radius: 10px;
 }
 @media (max-width: 768px) {
@@ -151,3 +172,4 @@
     font-size: 1rem;
   }
 }
+
