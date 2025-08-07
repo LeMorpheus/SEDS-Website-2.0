@@ -1,27 +1,22 @@
+// components/PostCard.js
 import Link from "next/link";
 import style from "../pages/posts/Posts.module.css";
-import { getStringFromDate } from "../lib/date";
 
+export default function PostCard({ post }) {
+  // Use customRoute if provided, else fall back to `/posts/${slug}`
+  const href = post.customRoute || `/posts/${post.slug}`;
 
-export default function PostCard({ post, onClick }) {
-  const date = typeof post?.date === 'number' ? new Date(post.date) : post.date.toDate();
-
-  const coverUrl =
-    post.coverImage ? `url(${post.coverImage})` : null;
   return (
-    <Link href={`/posts/${post.slug}`}  >
-      <a onClick={onClick}>
-        <div className={coverUrl ? style.post : style.post_no_cover} style={{ backgroundImage: coverUrl ?? '' }}>
-          <div className={style.post_data}>
-            {/* title */}
+    <Link href={href} passHref legacyBehavior>
+      <a className={style.cardLink}>
+        <div
+          className={style.post}
+          style={{ backgroundImage: `url(${post.coverImage})` }}
+        >
+          <div className={style.overlay}></div>
+          <div className={style.post_content}>
+            <span className={style.postCategory}>{post.category}</span>
             <h2 className={style.post_title}>{post.title}</h2>
-            {/* date */}
-            <p className={style.post_date}>
-              {date.toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "long",
-              })}
-            </p>
           </div>
         </div>
       </a>
