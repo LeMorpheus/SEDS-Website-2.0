@@ -5,22 +5,35 @@ import MetaTags from "../../components/Metatags";
 const demoPosts = [
   {
     slug: "project1",
-    title: "Project 1",
+    title: "Stability in Rocket Flight",
     coverImage: "/project1.png",
     customRoute: "/project1",
   },
   {
     slug: "project2",
-    title: "Project 2",
+    title: "Rocket Fuel",
     coverImage: "/project2.png",
     customRoute: "/project2",
   },
   {
-    slug: "post-3",
-    title: "Project 3",
+    slug: "project3",
+    title: "Spaceport America Cup",
     coverImage: "/project3.png",
     customRoute: "/project3",
   },
+    {
+    slug: "project4",
+    title: "Working of Rockets",
+    coverImage: "/image3.jpg",
+    customRoute: "/project4",
+  },
+    {
+    slug: "project5",
+    title: "Rockets Staging",
+    coverImage: "/image89.png",
+    customRoute: "/project5",
+  },
+
 ];
 
 export default function PostsPage() {
