@@ -4,10 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 
-// Team data (moved from lib/team_data.js for self-contained component)
-const data25 = [
-  // Current year (2025-2026) team data - populate with current team members
-];
+
 
 const data20 = [
   { name: 'Hemendra Singh Chauhan', img: 'Hemendra.png', por: 'Director of Events', url: 'https://www.linkedin.com/in/hemender12307/' },
@@ -111,6 +108,8 @@ const data21 = [
   },
 ];
 
+
+
 const data22 = [
   {
     name: "Atharva Mahajan",
@@ -202,6 +201,64 @@ const data22 = [
     img: "Parth.png",
     por: "Thrust Vector Control Lead"
   },
+];
+
+const data25 = [
+  {
+    name: "Kaashvi",
+    img: "Kaashvi.jpg",
+    por: "President",
+    url: ""
+  },
+  {
+    name: "Aarav Harshvardhan",
+    img: "default.jpg",
+    por: "Vice President",
+    url: ""
+  },
+  {
+    name: "Rujuta Deshmukh",
+    img: "Rujuta.jpg",
+    por: "Head of Outreach",
+    url: ""
+  },
+  {
+    name: "Rishi",
+    img: "default.jpg",
+    por: "Director of Projects",
+    url: ""
+  },
+  {
+    name: "Aarav Dhaduk",
+    img: "Aarav_D.jpg",
+    por: "Treasurer",
+    url: ""
+  },
+  {
+    name: "Vaishnavi Duggaraju",
+    img: "Vaishnavi.jpg",
+    por: "Editorial and Design Lead",
+    url: ""
+  },
+  {
+    name: "Aviral Dwivedi",
+    img: "Aviral.jpg",
+    por: "Web Development Lead",
+    url: ""
+  },
+ 
+  {
+    name: "Kishore Kanna",
+    img: "default.jpg",
+    por: "Publicity Lead",
+    url: ""
+  },
+  {
+    name: "Samarth Bhatia",
+    img: "Samarth.jpg",
+    por: "Web Development Deputy Lead",
+    url: ""
+  }
 ];
 
 // CSS styles as a JavaScript object (converted from TeamPage.module.css)
