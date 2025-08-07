@@ -112,7 +112,7 @@
 
 .carousel {
     display: flex;
-    animation: scrollLeft 30s linear infinite;
+    animation: scrollLeft 17s linear infinite;
     width: max-content;
     gap: 2rem;
 }
