@@ -207,7 +207,7 @@ const data22 = [
 // CSS styles as a JavaScript object (converted from TeamPage.module.css)
 const styles = {
   teamPageContainer: {
-    paddingTop: '12.5vh',
+    paddingTop: '60px',
     backgroundColor: 'black',
     backgroundImage: 'url("/images/space.jpg")',
     backgroundSize: 'cover',
@@ -271,10 +271,15 @@ const styles = {
     display: 'none' // Hidden since we're using the new icon-based selector
   },
   right: {
-    marginLeft: '45vh',
-    marginTop: '10vh',
-    overflowX: 'auto',
-    marginRight: '2vh'
+    marginLeft: '15vh',
+    marginRight: '15vh',
+    marginTop: '80px',
+    padding: '0 40px',
+    width: 'calc(100% - 30vh)',
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    boxSizing: 'border-box'
   },
   show: {
     display: 'flex',
@@ -316,10 +321,10 @@ const styles = {
   },
   // Card styles (converted from card.module.css)
   container: {
-    height: '55vh',
-    width: '40vh',
+    height: 'auto',
+    width: '100%',
     maxWidth: '290px',
-    margin: '5vh',
+    margin: '20px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -336,20 +341,21 @@ const styles = {
   },
   images: {
     width: '100%',
-    height: '60%',
+    paddingTop: '75%', // 4:3 aspect ratio
     background: 'black',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    position: 'relative',
     overflow: 'hidden'
   },
   img: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
     width: '100%',
     height: '100%',
-    position: 'relative'
+    objectFit: 'cover'
   },
   memberInfo: {
-    padding: '1.5vh',
+    padding: '15px',
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
@@ -418,15 +424,16 @@ const mobileStyles = `
     }
     
     .right {
-      margin-left: 4vh;
-      width: 100vw;
-      margin-right: 0vh;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      width: 100% !important;
+      padding: 20px !important;
     }
     
     .container {
-      width: 30vh;
-      height: 45vh;
-      margin: 2vh;
+      width: 30vh !important;
+      height: 45vh !important;
+      margin: 2vh !important;
     }
     
     .name {
@@ -592,7 +599,7 @@ export function YearSelector({
         .year-selector {
           position: fixed;
           top: 15vh;
-          left: 5vh;
+          left: 15vh;
           z-index: 100;
         }
         
@@ -670,11 +677,47 @@ export function YearSelector({
           color: #FFD700;
         }
         
+        @media screen and (max-width: 1024px) {
+          .year-selector {
+            left: 10vh;
+          }
+        }
+
         @media screen and (max-width: 768px) {
           .year-selector {
+            position: fixed;
             left: 50%;
             transform: translateX(-50%);
             top: 12vh;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          
+          .timeline-icon {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.85rem;
+            gap: 0.5rem;
+          }
+          
+          .timeline-icon svg {
+            width: 1rem;
+            height: 1rem;
+          }
+          
+          .current-year {
+            font-size: 0.9rem;
+          }
+          
+          .year-dropdown {
+            width: 100%;
+            min-width: unset;
+            font-size: 0.85rem;
+          }
+          
+          .year-option {
+            padding: 0.5rem 0.8rem;
           }
         }
       `}</style>
@@ -800,10 +843,54 @@ export function TeamPage() {
         }
         
         @media screen and (max-width: 768px) {
+          .right {
+            margin-top: 80px !important;
+            padding: 0 10px !important;
+          }
           .team-card {
-            width: 35vh !important;
-            height: 50vh !important;
-            margin: 3vh !important;
+            width: calc(50% - 20px) !important;
+            margin: 10px !important;
+            min-height: 300px !important;
+          }
+          .team-card .memberInfo {
+            padding: 12px !important;
+          }
+          .team-card .name {
+            font-size: 16px !important;
+          }
+          .team-card .por {
+            font-size: 14px !important;
+          }
+        }
+        
+        @media screen and (max-width: 480px) {
+          .right {
+            margin-top: 70px !important;
+            padding: 0 15px !important;
+          }
+          .team-card {
+            width: 100% !important;
+            max-width: 350px !important;
+            margin: 10px auto !important;
+            min-height: auto !important;
+          }
+          .year-selector {
+            width: auto !important;
+            max-width: 200px !important;
+          }
+          .timeline-icon {
+            width: auto !important;
+            justify-content: center !important;
+            padding: 6px 12px !important;
+            transform: scale(0.9) !important;
+          }
+          .year-dropdown {
+            width: 180px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+          }
+          .current-year {
+            font-size: 0.85rem !important;
           }
         }
       `}</style>
