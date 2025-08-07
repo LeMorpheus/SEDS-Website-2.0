@@ -2,10 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   async redirects() {
     const pages = ['home', 'sacup', 'cansat', 'cubesat', 'archangel', 'contact', 'about'];
     const redirects = pages.map((page) => `/${page}/index.html`);
     const redirectObjects = [];
+
     redirects.forEach((redirect, i) => {
       redirectObjects.push({
         source: `/${pages[i]}`,
@@ -13,6 +17,7 @@ const nextConfig = {
         permanent: true,
       });
     });
+
     return [
       {
         source: '/',
@@ -30,14 +35,8 @@ const nextConfig = {
         permanent: true,
       },
       ...redirectObjects,
-    ]
-  }
-}
-module.exports = {
-  eslint: {
-    ignoreDuringBuilds: true,
+    ];
   },
 };
 
-
-module.exports = nextConfig
+module.exports = nextConfig;
