@@ -4,6 +4,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -99,7 +105,7 @@
     }
 
     /* galaxy pixel font */
-    
+  
     .pixel-text {
   font-family: 'Pixelify Sans', sans-serif;
   font-weight: 800; 
@@ -115,12 +121,12 @@
  font-family: 'Pixelify Sans', sans-serif;
   font-weight: 800; 
   font-style: normal;
-  font-size: 35px;
-  white-space: nowrap;       
-         
+  font-size: 30px;
+  white-space: nowrap;            
   text-overflow: ellipsis;
-  color: #358F8A; 
+  color: #F7DA4F; 
 }
+
 .pixel-text-moto {
  font-family: 'Pixelify Sans', sans-serif;
   font-weight: 100; 
@@ -137,13 +143,60 @@
   background-clip: text;
   color: transparent;
   margin-top: 15px;
+  margin-bottom: 100px;
 }
   
+
+/* font option 2 */
+.pixelify-sans-title {
+      font-family: "Pixelify Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 0;
+      font-style: normal;
+      font-size: 80px;
+  white-space: nowrap;        
+  text-overflow: ellipsis;
+  color: #358F8A;
+  -webkit-text-stroke: 2px white;
+    }
+  
+.pixelify-sans-subtitle {
+      font-family: "Pixelify Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 0;
+      font-style: normal;
+      font-size: 40px;
+  white-space: nowrap;        
+  text-overflow: ellipsis;
+  color: #B6BD02;
+  -webkit-text-stroke: 2px white;
+    }
+
+.jersey-10-regular-title {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-size: 130px;
+  white-space: nowrap;        
+  text-overflow: ellipsis;
+  color: #78011E;
+  -webkit-text-stroke: 2px white;
+}
+
+
 /* Media query for small screens like phones */
 @media (max-width: 600px) {
   .pixel-text {
-    font-size: 70px; /* reduced from 100px */
-    margin-left: 330px; /* center instead of pushing right */
+    font-size: 57px; /* reduced from 100px */
+    margin-left: 0px; /* center instead of pushing right */
+    white-space: normal; /* allow wrapping */
+    display: block;
+    margin-bottom: 10px;
+  }
+  .jersey-10-regular-title {
+    font-size: 77px; /* reduced from 100px */
+    margin-left: 0px; /* center instead of pushing right */
     white-space: normal; /* allow wrapping */
     display: block;
     margin-bottom: 10px;
@@ -152,13 +205,13 @@
 
   .pixel-text-subtitle {
     font-size: 14px; /* reduced from 50px */
-    margin-left: 330px;
+    margin-left: 0px;
     margin-bottom: 15px;
   }
 
   .pixel-text-moto {
     font-size: 33px; /* reduced from 40px */
-    margin-left: 330px;
+    margin-left: 0px;
   }
 }
 
@@ -402,7 +455,7 @@
         </script>
           
           <div class="center-container">
-            <p class="pixel-text">WELCOME TO SEDS BPHC</p>
+            <p class="jersey-10-regular-title">WELCOME TO SEDS BPHC</p>
             <p class="pixel-text-subtitle">Students for the Exploration and Development of Space</p>
             <p class="pixel-text-moto">"Space or Nothing"</p>
           </div>
@@ -444,10 +497,10 @@
     
     const color = colors[Math.floor(Math.random() * colors.length)];
     
-    star.style.top = Math.random() * 100 + 'vh';
+    star.style.top = Math.random() * 125 + 'vh';
     star.style.left = Math.random() * 100 + 'vw';
     star.style.animationDuration = (5 + Math.random() * 4) + 's';
-    star.style.animationDelay = Math.random() * 5 + 's';
+    star.style.animationDelay = Math.random() * 1 + 's';
     star.style.background = color;
     star.style.boxShadow = `0 0 6px 2px ${color}`;
     

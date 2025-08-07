@@ -396,20 +396,25 @@ const styles = {
     cursor: 'pointer',
     boxShadow: '0 8px 32px 0 rgba(218, 165, 32, 0.15)'
   },
-  images: {
-    width: '100%',
-    paddingTop: '75%', // 4:3 aspect ratio
-    background: 'black',
-    position: 'relative',
-    overflow: 'hidden'
-  },
+ images: {
+  width: '100%',
+  //paddingTop: '80%', // 5:4 aspect ratio
+  background: 'black',
+  position: 'relative',
+  overflow: 'hidden',
+  borderRadius: '5px', // optional for rounded look
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+},
   img: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
+    //position: 'absolute',
+    //top: 0,
+    //left: 0,
     width: '100%',
-    height: '100%',
-    objectFit: 'cover'
+    height: 'auto',
+    objectFit: 'contain',
+    display: 'block'
   },
   memberInfo: {
     padding: '15px',
