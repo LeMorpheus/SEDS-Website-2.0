@@ -128,3 +128,26 @@
     font-size: 1.8rem;
   }
 }
+.postContent {
+  padding: 2rem 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: black; /* assuming dark background */
+  line-height: 1.7;
+  font-size: 2rem;
+}
+
+.postContent img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 5rem auto 2rem auto;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .postContent {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+}

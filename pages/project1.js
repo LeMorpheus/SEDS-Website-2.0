@@ -6,7 +6,7 @@ export default function Project1Page() {
     <>
       <MetaTags title="Project 1" description="Details about Project 1" />
       <main style={{ padding: "2rem" }}>
-        <h1>Project 1</h1>
+        <h1> </h1>
         <Post1Content />
       </main>
     </>
