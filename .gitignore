@@ -40,4 +40,6 @@ next-env.d.ts
 node_modules
 .DS_Store
 *.log
+SEDS-Local/
+echo "SEDS-Local/SEDS-Website-2.0" >> .gitignore
 
