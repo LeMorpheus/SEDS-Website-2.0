@@ -219,7 +219,7 @@ const data25 = [
   {
     name: "Rujuta Deshmukh",
     img: "Rujuta.jpg",
-    por: "Head of Outreach And Hyperion Lead",
+    por: "Head of Outreach And Hyperion Co-Lead",
     url: ""
   },
   {
@@ -249,7 +249,7 @@ const data25 = [
  
   {
     name: "Kishor Kanna",
-    img: "default.jpg",
+    img: "Kishor.jpg",
     por: "Publicity Lead",
     url: ""
   },
