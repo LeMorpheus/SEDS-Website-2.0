@@ -215,6 +215,50 @@
   }
 }
 
+
+@media (min-width: 600px) and (max-width: 1050px) {
+  .pixel-text {
+    font-size: 80px; /* smaller than desktop but bigger than mobile */
+    margin-left: 0;
+    white-space: normal; /* allow wrapping */
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .jersey-10-regular-title {
+    font-size: 90px;
+    margin-left: 0;
+    white-space: normal;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .pixel-text-subtitle {
+    font-size: 20px; /* scale down subtitle */
+    margin-left: 0;
+    margin-bottom: 15px;
+    white-space: normal;
+  }
+
+  .pixel-text-moto {
+    font-size: 35px;
+    margin-left: 0;
+  }
+}
+
+
+
+/* For very small devices below 400px */
+@media (max-width: 400px) {
+  .pixel-text-subtitle {
+    font-size: 12px; /* smaller so it doesn’t clip */
+    margin-left: 0;
+    margin-bottom: 12px;
+    white-space: normal; /* allow wrapping */
+  }
+}
+
+
     
 
 /* Aviral star bg */
@@ -438,11 +482,11 @@
           onclick="document.getElementById('menu').classList.add('open')"
           class="nav-ele fa-solid fa-bars"
         ></i>
-        <a class="nav-ele" href="../sacup/">Artemis</a>
-        <a class="nav-ele" href="../cansat/">Janus</a>
+        <a class="nav-ele" href="../sacup/">Rocket</a>
+        <a class="nav-ele" href="../cansat/">CanSat</a>
         <img src="../assets/images/seds_logo_w.png" alt="SEDS Logo" />
-        <a class="nav-ele" href="../cubesat/">Hyperion</a>
-        <a class="nav-ele" href="../archangel/">Archangel</a>
+        <a class="nav-ele" href="../cubesat/">CubeSat</a>
+        <a class="nav-ele" href="../archangel/">R&D</a>
         <i class="nav-ele fa fa-search" aria-hidden="true"></i>
       </nav>
       <section id="carousel-section">
@@ -497,10 +541,10 @@
     
     const color = colors[Math.floor(Math.random() * colors.length)];
     
-    star.style.top = Math.random() * 125 + 'vh';
+    star.style.top = Math.random() * 100 + 'vh';
     star.style.left = Math.random() * 100 + 'vw';
     star.style.animationDuration = (5 + Math.random() * 4) + 's';
-    star.style.animationDelay = Math.random() * 1 + 's';
+    star.style.animationDelay = Math.random() * 5 + 's';
     star.style.background = color;
     star.style.boxShadow = `0 0 6px 2px ${color}`;
     
