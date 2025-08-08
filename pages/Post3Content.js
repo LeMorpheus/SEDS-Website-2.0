@@ -4,7 +4,7 @@ export default function Post3Content() {
   return (
     <div className={style.postContent}>
       <h1>Spaceport America Cup</h1>
-      <img src="image2.jpg" alt="Rocket Fuel Image" className={style.image} />
+      <img src="sa-cup.png" alt="Rocket Fuel Image" className={style.image} />
       <p>
         In SEDS, we work together as different teams to achieve our goals in a more specialized way. 
         Our rocketry team, named <span className={style.highlight}>Artemis</span>, comprises around 25 

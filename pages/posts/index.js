@@ -24,7 +24,7 @@ const demoPosts = [
     {
     slug: "project4",
     title: "Working of Rockets",
-    coverImage: "/image3.jpg",
+    coverImage: "/image17.png",
     customRoute: "/project4",
   },
     {

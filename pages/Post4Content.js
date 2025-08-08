@@ -4,7 +4,7 @@ export default function Post4Content() {
   return (
     <div className={style.postContent}>
       <h1>How Do Rockets Really Work?</h1>
-      <img src="image1.jpg" alt="Rocket Diagram" />
+      <img src="image19.png" alt="Rocket Diagram" />
 
       <h2>Breaking Down the Basic Principles</h2>
       <p>
