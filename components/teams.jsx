@@ -207,7 +207,7 @@ const data25 = [
   {
     name: "Kaashvi",
     img: "Kaashvi.jpg",
-    por: "President",
+    por: "President And Archangel Lead",
     url: ""
   },
   {
@@ -219,7 +219,7 @@ const data25 = [
   {
     name: "Rujuta Deshmukh",
     img: "Rujuta.jpg",
-    por: "Head of Outreach",
+    por: "Head of Outreach And Hyperion Lead",
     url: ""
   },
   {
@@ -248,7 +248,7 @@ const data25 = [
   },
  
   {
-    name: "Kishore Kanna",
+    name: "Kishor Kanna",
     img: "default.jpg",
     por: "Publicity Lead",
     url: ""
@@ -258,7 +258,19 @@ const data25 = [
     img: "Samarth.jpg",
     por: "Web Development Deputy Lead",
     url: ""
-  }
+  },
+  {
+    name: "Sham Patel",
+    img: "Sham.jpg",
+    por: "Janus Lead",
+    url: ""
+  },
+  {
+    name: "Sajag Narayan",
+    img: "Sajag.jpg",
+    por: "Hyperion Co-Lead",
+    url: ""
+  },
 ];
 
 // CSS styles as a JavaScript object (converted from TeamPage.module.css)
